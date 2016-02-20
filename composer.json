@@ -1,7 +1,16 @@
 {
     "name": "potatopowered/phone-helper",
-    "description": "A CakePHP 3.x telephone number formatting plugin.",
     "type": "cakephp-plugin",
+    "description": "A CakePHP 3.x telephone number formatting plugin.",
+    "keywords": ["phone","telephone","number","helper"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blake Sutton",
+            "email": "sutton.blake@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0"
