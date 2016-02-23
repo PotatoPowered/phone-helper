@@ -3,10 +3,12 @@
 [![Travis](https://img.shields.io/travis/PotatoPowered/phone-helper.svg?style=flat-square)](https://travis-ci.org/PotatoPowered/phone-helper/builds) 
 [![Codecov](https://img.shields.io/codecov/c/github/PotatoPowered/phone-helper.svg?style=flat-square)](https://codecov.io/github/PotatoPowered/phone-helper) 
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/PotatoPowered/phone-helper.svg?style=flat-square)](https://scrutinizer-ci.com/g/PotatoPowered/phone-helper/)
+[![Packagist](https://img.shields.io/packagist/dt/potatopowered/phone-helper.svg?style=flat-square)](https://packagist.org/packages/potatopowered/phone-helper)
 
 A phone number formatting helper for CakePHP 3.x
 
 ## Description
+
 The phone number helper will extend the [NumberHelper](http://book.cakephp.org/3.0/en/core-libraries/number.html) 
 that is already built into CakePHP 3.x. This means that you will be able to use 
 all of the number helper functionality with the addition of the phone number 
@@ -17,16 +19,14 @@ formatter functions.
 ```
 composer require potatopowered/phone-helper
 ```
-Add the plugin load command to `config/bootstrap.php`
+Add the helper to the public helpers variable of the controller you need it on or in the AppController
+to have it accessible in all controllers.
 ```
-Plugin::load('phone-helper');
-```
-Add the helper to the initialize function of the controller you need it on or in the AppController
-to have it accessable in all controllers.
-```
-'Number' => [
-    'className' => 'potatopowered.Phone'
-]
+public $helpers = [
+    'Number' => [
+        'className' => 'PhoneHelper.Phone'
+    ]
+];
 ```
 
 ## Usage
