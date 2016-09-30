@@ -23,7 +23,7 @@ Add the helper to the public helpers variable of the controller you need it on o
 to have it accessible in all controllers.
 ```
 public $helpers = [
-    'Number' => [
+    'Phone' => [
         'className' => 'PhoneHelper.Phone'
     ]
 ];
@@ -32,12 +32,20 @@ public $helpers = [
 ## Usage
 
 To use the phone number formatter you must have the helper loaded in your controller. 
-Once loaded in the controller as shown above you can call the number helper's `phone($number)`
+Once loaded in the controller as shown above you can call the number helper's `format($number)`
 function.
 ```
 // (123) 456-789
-$this->Number->phone('1234567890');
+$this->Phone->format('1234567890');
 
 // 456-7890
-$this->Number->phone('4567890');
+$this->Phone->format('4567890');
+```
+You can also add telephone links in RFC3966 format using the 'link' method
+```
+// <a href="tel:+1234567890">123-456-7890</a>
+$this->Phone->link('123-456-7890');
+
+// <a href="tel:+1234567890">Call Us</a>
+$this->Phone->link(h('Call Us'), '1234567890');
 ```

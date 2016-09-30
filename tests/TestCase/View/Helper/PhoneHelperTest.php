@@ -79,9 +79,9 @@ class ProgressHelperTest extends TestCase
         $title = "phone";
         $number = "123-456-7890";
         $phoneLink = $this->Phone->link($number);
-        $phoneLinkTitle = $this->Phone->link($title, $number);
+        $phoneLinkWithTitle = $this->Phone->link($title, $number);
 
-        $this->assertEquals('<a href="tel:+1234567890">tel: 1234567890</a>', $phoneLink);
-        $this->assertEquals('<a href="tel:+1234567890">phone</a>', $phoneLinkTitle);
+        $this->assertEquals('<a href="tel:+1234567890">123-456-7890</a>', $phoneLink);
+        $this->assertEquals('<a href="tel:+1234567890">phone</a>', $phoneLinkWithTitle);
     }
 }
