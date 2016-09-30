@@ -9,8 +9,6 @@
  * @author      Blake Sutton <blake@potatopowered.net>
  * @copyright   Copyright (c) Potato Powered Software
  * @link        http://potatopowered.net
- * @since       1.0
- * @version     1.0
  * @license     http://www.opensource.org/licenses/mit-license.php MIT License
  */
 namespace PhoneHelper\Test\TestCase\View\Helper;
@@ -45,13 +43,45 @@ class ProgressHelperTest extends TestCase
      * This function runs a few tests to check if 7 and 10 digit phone number
      * prettifying is working correctly.
      */
-    public function testPhone()
+    public function testPhoneFormat()
     {
-        $tenDigit = $this->Phone->phone('1234567890');
-        $sevenDigit = $this->Phone->phone('1234567');
-        $original = $this->Phone->phone('12345678901');
+        $tenDigit = $this->Phone->format('1234567890');
+        $sevenDigit = $this->Phone->format('1234567');
+        $original = $this->Phone->format('12345678901');
+
         $this->assertEquals('(123) 456-7890', $tenDigit);
         $this->assertEquals('123-4567', $sevenDigit);
         $this->assertEquals('12345678901', $original);
+    }
+
+    /**
+     * Run the plugin phone link tests
+     *
+     * This function runs a few tests to check that the phone links work correctly
+     */
+    public function testBuildPhoneUrl()
+    {
+        $number = '123-456-7890';
+        $number2 = '(123) 456-7890';
+        $expected = 'tel:+1234567890';
+
+        $this->assertEquals($expected, $this->Phone->buildUrl($number));
+        $this->assertEquals($expected, $this->Phone->buildUrl($number2));
+    }
+
+    /**
+     * Run the plugin phone link tests
+     *
+     * This function runs a few tests to check that the phone links work correctly
+     */
+    public function testPhoneLink()
+    {
+        $title = "phone";
+        $number = "123-456-7890";
+        $phoneLink = $this->Phone->link($number);
+        $phoneLinkTitle = $this->Phone->link($title, $number);
+
+        $this->assertEquals('<a href="tel:+1234567890">tel: 1234567890</a>', $phoneLink);
+        $this->assertEquals('<a href="tel:+1234567890">phone</a>', $phoneLinkTitle);
     }
 }
