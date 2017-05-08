@@ -51,7 +51,7 @@ class ProgressHelperTest extends TestCase
 
         $this->assertEquals('(123) 456-7890', $tenDigit);
         $this->assertEquals('123-4567', $sevenDigit);
-        $this->assertEquals('12345678901', $original);
+        $this->assertEquals('1 (234) 567 8901', $original);
     }
 
     /**
