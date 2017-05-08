@@ -13,7 +13,8 @@
     ],
     "require": {
         "php": ">=5.4.16",
-        "cakephp/cakephp": "~3.0"
+        "cakephp/cakephp": "~3.0",
+        "sphpdox/sphpdox": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*",
@@ -26,8 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "PhoneHelper\\Test\\": "tests",
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+            "PhoneHelper\\Test\\": "tests"
         }
     }
 }
