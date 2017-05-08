@@ -9,10 +9,7 @@ A phone number formatting helper for CakePHP 3.x
 
 ## Description
 
-The phone number helper will extend the [NumberHelper](http://book.cakephp.org/3.0/en/core-libraries/number.html) 
-that is already built into CakePHP 3.x. This means that you will be able to use 
-all of the number helper functionality with the addition of the phone number 
-formatter functions. 
+The phone number helper is designed to help format phone numbers of all types into tel links or just a prettified format. Please send a pull request if you do not see your phone number format included.
 
 ## Installation
 
